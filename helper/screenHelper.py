@@ -34,6 +34,7 @@ def is_session_present(sessionname):
 #Returns the returing string after the stuff command has been executed
 def stuff_string_into_screen_session(sessionname, stringToStuff):
     if (not sessionname or not stringToStuff):
+        print("failed vaildations of params: NOT PROVIDED")
         return None
 
     if (is_session_present(sessionname) == False):
