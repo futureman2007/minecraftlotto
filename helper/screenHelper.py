@@ -25,7 +25,6 @@ def is_session_present(sessionname):
         return False
 
     for sessions in listOfScreenSessions:
-        print("DEBUG:" + sessions.lower())
-        if (sessions.lower() in sessionname):
+        if (sessionname in sessions.lower()):
             return True
     return False
