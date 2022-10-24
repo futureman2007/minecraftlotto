@@ -17,7 +17,7 @@ def is_session_present(sessionname):
     
     if (not sessionname):
         return False
-    
+    sessionname=sessionname.lower()
     listOfScreenSessions = get_running_screen_sessions()
        
     if (listOfScreenSessions.len() == 0):
