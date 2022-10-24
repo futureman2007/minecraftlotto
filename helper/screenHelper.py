@@ -40,4 +40,3 @@ def stuff_string_into_screen_session(sessionname, stringToStuff):
         return None
 
     ret = os.popen("screen -S " + sessionname + " " + "-X stuff " + "\""+ stringToStuff + "\"").read()
-    screenCommandFull="screen -S " + sessionname + " " + "-X stuff " + "\""+ stringToStuff + "\""
