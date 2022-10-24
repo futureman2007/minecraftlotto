@@ -29,14 +29,14 @@ def is_session_present(sessionname):
     return False
 
 #TODO: instead of returning False, raise an exception
+#TODO: add guarantee logic if something has stuffed or errorhandling (e.g. screen is not installed, stuff has gone wrong (given, when returning the output of the stuff command))
 #stuffs <stringToStuff> to an existing session named <sessionname>
-#Returns True on success, else false.
-#if one of poth parameters is emtpy, return False
-#If session with specified name is not present, return false
+#Returns the returing string after the stuff command has been executed
 def stuff_string_into_screen_session(sessionname, stringToStuff):
     if (not sessionname or not stringToStuff):
-        return False
+        return None
 
     if (is_session_present == False):
-        return False
-    ret = os.popen("screen -S " + sessionname + " " + "-X stuff " + "\""+ stringToStuff + "\"")
+        return None
+    
+    ret = os.popen("screen -S " + sessionname + " " + "-X stuff " + "\""+ stringToStuff + "\"").read()
