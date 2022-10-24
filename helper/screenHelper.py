@@ -27,3 +27,16 @@ def is_session_present(sessionname):
         if (sessionname in sessions.lower()):
             return True
     return False
+
+#TODO: instead of returning False, raise an exception
+#stuffs <stringToStuff> to an existing session named <sessionname>
+#Returns True on success, else false.
+#if one of poth parameters is emtpy, return False
+#If session with specified name is not present, return false
+def stuff_string_into_screen_session(sessionname, stringToStuff):
+    if (not sessionname or not stringToStuff):
+        return False
+
+    if (is_session_present == False):
+        return False
+    ret = os.popen("screen -S " + sessionname + " " + "-X stuff " + "\""+ stringToStuff + "\"")
