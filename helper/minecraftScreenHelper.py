@@ -10,3 +10,7 @@ def send_say_in_minecraft_session(stringToSay):
     #screen -s minecraft -X stuff $'say "***Starting Backup...\n'
     #ret = os.popen("screen -S minecraft -X stuff \"say ***Starting Backup\"" + "^M")
     return screenHelper.stuff_string_into_screen_session(sessionname="minecraft", stringToStuff="say " + stringToSay + "^M" )
+
+
+def read_from_current_logfile(resetOldLog):
+    #TODO implement me
