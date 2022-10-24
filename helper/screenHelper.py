@@ -36,7 +36,7 @@ def stuff_string_into_screen_session(sessionname, stringToStuff):
     if (not sessionname or not stringToStuff):
         return None
 
-    if (is_session_present == False):
+    if (is_session_present(sessionname) == False):
         return None
     
     ret = os.popen("screen -S " + sessionname + " " + "-X stuff " + "\""+ stringToStuff + "\"").read()
