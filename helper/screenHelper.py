@@ -14,7 +14,6 @@ def get_running_screen_sessions():
 
 #checks, if there is a session with <sessionname> if so, return true, else return false. if list is empty (no running screen session) return false
 def is_session_present(sessionname):
-    print("DEBUG:" + sessionname)
     if (not sessionname):
         return False
 
