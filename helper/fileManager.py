@@ -86,7 +86,7 @@ def load_file_content_relative_path(relpath, filename):
     return file_content
 
 def load_file_content_abs_path(abspath, filename):
-    file = os.path.join(abspath, '/' + filename)
+    file = os.path.normpath(abspath + '/' + filename)
     with open(file, 'r') as file:
         file_content = file.read()
     return file_content
@@ -99,7 +99,7 @@ def load_file_content_relative_path_json(relpath, filename):
     return file_content
 
 def load_file_content_abs_path_json(abspath, filename):
-    file = os.path.join(abspath, '/' + filename)
+    file = os.path.normpath(abspath + '/' + filename)
     with open(file, 'r') as file:
         file_content = json.load(file)
     return file_content
@@ -109,7 +109,7 @@ def write_json_file_content_abs_path(abspath, filename, filecontent):
     threadlock = threading.Lock()
     with processlock:        
         with threadlock:
-            file = os.path.join(abspath, '/' + filename)
+            file = os.path.normpath(abspath + '/' + filename)
             with open(file, 'w') as file:
                 json.dump(filecontent,file)
     return True
@@ -142,7 +142,7 @@ def create_new_json_file_content_abs_path(abspath, filename, newContent={}):
     processlock = multiprocessing.Lock()
     with processlock:
         with threadlock:
-            file = os.path.join(abspath, '/' + filename)
+            file = os.path.normpath(abspath + '/' + filename)
             with open(file, 'w') as file:
                 file.truncate()
                 json.dump(newContent, file)
