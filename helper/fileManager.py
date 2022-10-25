@@ -70,6 +70,7 @@ def clean_file_content_relative_path(relpath, filename):
 
 def clean_file_content_abs_path(abspath, filename):
     file = os.path.join(abspath, '/' + filename)
+    print(file)
     processlock = multiprocessing.Lock()
     threadlock = threading.Lock()
     with processlock:
