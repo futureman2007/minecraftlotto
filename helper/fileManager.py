@@ -25,7 +25,7 @@ def append_content_to_file(srcpath, srcfilename, content, useRaltivePath=False):
     else:    
         with processlock:
             with threadlock: 
-                file = os.path.join(srcpath, '/' + srcfilename)
+                file = os.path.normpath(srcpath + '/' + srcfilename)
                 with open(file, 'a') as file:
                     appendReturn = file.write(content)
 
@@ -51,7 +51,7 @@ def copy_existing_file(path, filename, destpath, destfilename, useRelativePath=F
     with processlock:
         with threadlock:
             if (useRelativePath is True):
-                returnAfterCopy = shutil.copy(cur_path + '/' + path + '/' + filename, cur_path + '/' + destpath + '/' + destfilename)
+                returnAfterCopy = shutil.copy(os.path.normpath(cur_path + '/' + path + '/' + filename, cur_path + '/' + destpath + '/' + destfilename))
                 
             else:
                 returnAfterCopy = shutil.copy(path + '/' + filename, destpath + '/' + destfilename)             
