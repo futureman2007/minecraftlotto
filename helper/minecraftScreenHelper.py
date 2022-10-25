@@ -12,5 +12,6 @@ def send_say_in_minecraft_session(stringToSay):
     return screenHelper.stuff_string_into_screen_session(sessionname="minecraft", stringToStuff="say " + stringToSay + "^M" )
 
 
-def read_from_current_logfile(resetOldLog):
+def read_from_current_logfile(resetOldLog=True):
     #TODO implement me
+    pass
