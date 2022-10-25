@@ -24,7 +24,7 @@ print("***fileManager.clean_file_content_abs_path(/home/minecraft/scripts/python
 print(fileManager.clean_file_content_abs_path("/home/minecraft/scripts/python/minecraftlotto/testfiles", "testfile1.txt"))
 
 print("***fileManager.clean_file_content_relative_path(testfiles, testfile1.txt)")
-print(fileManager.clean_file_content_relative_path("testfiles", "testfile1.txt"))
+print(fileManager.clean_file_content_relative_path("../testfiles", "testfile1.txt"))
 
 print("***fileManager.clean_file_content_relative_path(path=/home/minecraft/scripts/python/minecraftlotto/testfiles/,filename=testfile3.txt, destpath=/home/minecraft/scripts/python/minecraftlotto/testfiles/, destfilename=copy_existing_file_test.txt)")
 print(fileManager.copy_existing_file(path="/home/minecraft/scripts/python/minecraftlotto/testfiles", 
