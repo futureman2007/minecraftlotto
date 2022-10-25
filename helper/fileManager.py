@@ -7,19 +7,54 @@ import multiprocessing
 import shutil
 # you dont need trhead concurrency here... put process concurrency!
 # see https://docs.python.org/3/library/multiprocessing.html for more details! Thread is not enough!
+    
+def append_content_to_file(srcpath, srcfilename, content, useRaltivePath=False):
+    file = None
+    appendReturn = None
+    processlock = multiprocessing.Lock()
+    threadlock = threading.Lock()
+
+    if(useRaltivePath):
+        with processlock:
+            with threadlock:
+                cur_path = os.path.dirname(__file__)
+                file = os.path.join(cur_path, srcpath +  '/' + srcfilename)
+                with open(file, 'a') as file:
+                    appendReturn = file.write(content)
+    else:    
+        with processlock:
+            with threadlock: 
+                file = os.path.join(srcpath, '/' + srcfilename)
+                with open(file, 'a') as file:
+                    appendReturn = file.write(content)
+
+    return appendReturn
+
+
+def copy_existing_file_and_clean_srcfile(path, filename, destpath, destfilename, useRelativePath=False):
+    returnAfterCopy = copy_existing_file(path, filename, destpath, destfilename, useRelativePath)
+    print("DEBUG: Copy returned: " + returnAfterCopy)
+    
+    if (useRelativePath):
+        clean_file_content_relative_path(path, filename)
+    else:
+        clean_file_content_abs_path(path, filename)
+    
+
 
 def copy_existing_file(path, filename, destpath, destfilename, useRelativePath=False):
     cur_path = os.path.dirname(__file__)
     processlock = multiprocessing.Lock()
     threadlock = threading.Lock()
-
+    returnAfterCopy = None
     with processlock:
         with threadlock:
             if (useRelativePath is True):
-                shutil.copy(cur_path + '/' + path + '/' + filename, cur_path + '/' + destpath + '/' + destfilename)
+                returnAfterCopy = shutil.copy(cur_path + '/' + path + '/' + filename, cur_path + '/' + destpath + '/' + destfilename)
+                
             else:
-                shutil.copy(path + '/' + filename, destpath + '/' + destfilename)
-
+                returnAfterCopy = shutil.copy(path + '/' + filename, destpath + '/' + destfilename)             
+    return returnAfterCopy
 
 def clean_file_content_relative_path(relpath, filename):
     cur_path = os.path.dirname(__file__)
