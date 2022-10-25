@@ -1,0 +1,7 @@
+---
+Testfile2_Content
+Lorem Ipsum
+[Dolor Sit Amet]
+:Dolor
+:D
+---

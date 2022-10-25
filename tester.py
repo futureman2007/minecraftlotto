@@ -16,8 +16,26 @@ print(screenHelper.is_session_present("none"))
 print("***minecraftScreenHelper.send_say_in_minecraft_session(I sended this using Python :D)")
 print(minecraftScreenHelper.send_say_in_minecraft_session("I sended this using Python :D"))
 
-print("***")
-print(fileManager.clean_file_content_abs_path("/home/minecraft/testfile.txt"))
+print("***fileManager.clean_file_content_abs_path(/home/minecraft/scripts/python/minecraftlotto/testfiles, testfile1.txt)")
+print(fileManager.clean_file_content_abs_path("/home/minecraft/scripts/python/minecraftlotto/testfiles/", "testfile1.txt"))
 
-print(copy_existing_file)
+print("***fileManager.clean_file_content_relative_path(testfiles, testfile1.txt)")
+print(fileManager.clean_file_content_relative_path("testfiles", "testfile1.txt"))
+
+print("***fileManager.clean_file_content_relative_path(path=/home/minecraft/scripts/python/minecraftlotto/testfiles/,filename=testfile3.txt, destpath=/home/minecraft/scripts/python/minecraftlotto/testfiles/, destfilename=copy_existing_file_test.txt)")
+print(fileManager.copy_existing_file(path="/home/minecraft/scripts/python/minecraftlotto/testfiles/", 
+                                    filename="testfile3.txt",
+                                    destpath="/home/minecraft/scripts/python/minecraftlotto/testfiles/", 
+                                    destfilename="copy_existing_file_test.txt"))
+
+print("***fileManager.copy_existing_file_and_clean_srcfile()")
+print(fileManager.copy_existing_file_and_clean_srcfile(path="/home/minecraft/scripts/python/minecraftlotto/testfiles/", 
+                                    filename="testfile4.txt",
+                                    destpath="/home/minecraft/scripts/python/minecraftlotto/testfiles/", 
+                                    destfilename="copy_existing_file_and_clean_srcfile.txt"))
+
+print(fileManager.append_content_to_file(srcpath="/home/minecraft/scripts/python/minecraftlotto/testfiles/", 
+                                    srcfilename="testfile5.txt",
+                                    content="[THIS SHOULD BE NOW ADDED]" + "\n" + "[AND THIS ALSO BUT IN A NEW LINE]"))
+
 
