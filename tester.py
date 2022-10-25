@@ -37,9 +37,14 @@ print(fileManager.copy_existing_file_and_clean_srcfile(path="/home/minecraft/scr
                                     filename="testfile4.txt",
                                     destpath="/home/minecraft/scripts/python/minecraftlotto/testfiles", 
                                     destfilename="copy_existing_file_and_clean_srcfile.txt"))
-
+print("***fileManager.append_content_to_file()")
 print(fileManager.append_content_to_file(srcpath="/home/minecraft/scripts/python/minecraftlotto/testfiles", 
                                     srcfilename="testfile5.txt",
                                     content="[THIS SHOULD BE NOW ADDED]" + "\n" + "[AND THIS ALSO BUT IN A NEW LINE]"))
+
+print("***fileManager.append_content_to_file() (append content from an other file")
+print(fileManager.append_content_to_file(srcpath="/home/minecraft/scripts/python/minecraftlotto/testfiles", 
+                                    srcfilename="testfile5.txt",
+                                    content=fileManager.load_file_content_relative_path("../testfiles", "testfile2.txt")))
 
 
