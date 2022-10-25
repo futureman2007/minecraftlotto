@@ -21,7 +21,7 @@ print("***minecraftScreenHelper.send_say_in_minecraft_session(I sended this usin
 print(minecraftScreenHelper.send_say_in_minecraft_session("I sended this using Python :D"))
 
 print("***fileManager.clean_file_content_abs_path(/home/minecraft/scripts/python/minecraftlotto/testfiles, testfile1.txt)")
-print(fileManager.clean_file_content_abs_path("/home/minecraft/scripts/python/minecraftlotto/testfiles/", "testfile1.txt"))
+print(fileManager.clean_file_content_abs_path("/home/minecraft/scripts/python/minecraftlotto/testfiles", "testfile1.txt"))
 
 print("***fileManager.clean_file_content_relative_path(testfiles, testfile1.txt)")
 print(fileManager.clean_file_content_relative_path("./testfiles", "testfile1.txt"))
