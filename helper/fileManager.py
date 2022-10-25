@@ -5,7 +5,10 @@ import multiprocessing
 import shutil
 # you dont need trhead concurrency here... put process concurrency!
 # see https://docs.python.org/3/library/multiprocessing.html for more details! Thread is not enough!
-    
+
+#TODO: add exception handling for PermissionError: [Errno 13] Permission denied: '/testfile1.txt' (writing to file)
+
+
 def append_content_to_file(srcpath, srcfilename, content, useRaltivePath=False):
     file = None
     appendReturn = None
