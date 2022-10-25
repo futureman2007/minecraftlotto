@@ -5,8 +5,8 @@ import getpass
 import os
 
 print("**** DEBUG AND TESTING ****")
-print("*** running as user: [%s]" %(os.getlogin/()))
-print("*** Effective user is [%s]" % (getpass.getuser()))
+print("*** running as user: [%s]" % (os.getlogin() ))
+print("*** Effective user is [%s]" % (getpass.getuser() ))
 
 print("***screenHelper.get_running_screen_sessions()")
 print(screenHelper.get_running_screen_sessions())
