@@ -18,6 +18,6 @@ def read_newest_line_from_logfile(pathToLogFile, filename="latest.log"):
 
     logfileContent = fileManager.load_file_content_abs_path(pathToLogFile, filename)
     splitString = logfileContent.split("\n")
-    return splitString[ len(splitString) -1 ]    
+    return splitString[ len(splitString) -2 ]    
 
 
