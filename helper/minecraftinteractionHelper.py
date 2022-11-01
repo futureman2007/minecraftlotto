@@ -14,5 +14,5 @@ def send_say_in_minecraft_session(stringToSay):
 
 def read_newest_line_from_logfile(pathToLogFile, filename="latest.log"):
     
-    print(fileManager.load_file_content_abs_path(pathToLogFile, filename))
+    return fileManager.load_file_content_abs_path(pathToLogFile, filename))
 
