@@ -1,24 +1,13 @@
 from helper import screenHelper
-from helper import minecraftScreenHelper
+from helper import minecraftinteractionHelper
 from helper import fileManager
-import getpass
 import os
+import getpass
 
 print("**** DEBUG AND TESTING ****")
 print("*** running as user: [%s]" % (os.getlogin() ))
 print("*** Effective user is [%s]" % (getpass.getuser() ))
 
-print("***screenHelper.get_running_screen_sessions()")
-print(screenHelper.get_running_screen_sessions())
-
-print("***screenHelper.is_session_present(minecraft)")
-print(screenHelper.is_session_present("minecraft"))
-
-print("***screenHelper.is_session_present(none)")
-print(screenHelper.is_session_present("none"))
-
-print("***minecraftScreenHelper.send_say_in_minecraft_session(I sended this using Python :D)")
-print(minecraftScreenHelper.send_say_in_minecraft_session("I sended this using Python :D"))
 
 print("***fileManager.clean_file_content_abs_path(/home/minecraft/scripts/python/minecraftlotto/testfiles, testfile1.txt)")
 print(fileManager.clean_file_content_abs_path("/home/minecraft/scripts/python/minecraftlotto/testfiles", "testfile1.txt"))

@@ -1,5 +1,6 @@
 import os
 from helper import screenHelper
+from helper import fileManager 
 
 def send_say_in_minecraft_session(stringToSay):
     if (not stringToSay):
@@ -11,7 +12,7 @@ def send_say_in_minecraft_session(stringToSay):
     #ret = os.popen("screen -S minecraft -X stuff \"say ***Starting Backup\"" + "^M")
     return screenHelper.stuff_string_into_screen_session(sessionname="minecraft", stringToStuff="say " + stringToSay + "^M" )
 
+def read_newest_line_from_logfile(pathToLogFile, filename="latest.log"):
+    
+    print(fileManager.load_file_content_abs_path(pathToLogFile, filename))
 
-def read_from_current_logfile(resetOldLog=True):
-    #TODO implement me
-    pass
