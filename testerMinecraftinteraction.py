@@ -13,3 +13,6 @@ print("*** Effective user is [%s]" % (getpass.getuser() ))
 
 print("***minecraftinteractionHelper.read_newest_line_from_logfile(/home/minecraft/minecraft-server/vanilla_1-19-2/logs)")
 print(minecraftinteractionHelper.read_newest_line_from_logfile("/home/minecraft/minecraft-server/vanilla_1-19-2/logs"))
+
+print("minecraftinteractionHelper.give_player_item(Futureman2007, minecraft:dirt, 10))"
+print(minecraftinteractionHelper.give_player_item("Futureman2007", "minecraft:dirt", 10))
