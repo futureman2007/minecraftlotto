@@ -13,6 +13,11 @@ def send_say_in_minecraft_session(stringToSay):
     return screenHelper.stuff_string_into_screen_session(sessionname="minecraft", stringToStuff="say " + stringToSay + "^M" )
 
 def read_newest_line_from_logfile(pathToLogFile, filename="latest.log"):
-    
-    return fileManager.load_file_content_abs_path(pathToLogFile, filename)
+    if (not pathToLogFile):
+        return None
+
+    logfileContent = fileManager.load_file_content_abs_path(pathToLogFile, filename)
+    splitString = logfileContent.split("\n")
+    return splitString[ len(splitString -1) ]    
+
 
