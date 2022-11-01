@@ -27,7 +27,7 @@ def give_player_item (playername, itemname, amount=1):
     if (screenHelper.is_session_present("minecraft") == False):
         return None
 
-    return screenHelper.stuff_string_into_screen_session(sessionname="minecraft", stringToStuff="give " + playername + " " + "itemname" + " " + amount "^M" )
+    return screenHelper.stuff_string_into_screen_session(sessionname="minecraft", stringToStuff="give " + playername + " " + "itemname" + " " + amount + "^M" )
 
 #def
     #to get the first player which has written into the chat:
